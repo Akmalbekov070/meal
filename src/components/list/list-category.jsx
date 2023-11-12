@@ -1,3 +1,4 @@
+import React from 'react';
 import {
 	Box,
 	Button,
@@ -13,25 +14,23 @@ import {
 	Text,
 } from '@chakra-ui/react';
 import Link from 'next/link';
-import React from 'react';
 import { BsFillEyeFill } from 'react-icons/bs';
 
-export default function CategoryItem({ strCategory, strCategoryDescription, strCategoryThumb }) {
+export default function Listcategory({ idMeal, strMeal, strMealThumb }) {
 	return (
-		<Link href={`/category/${strCategory}`}>
-			<Card maxW='sm' mx={'auto'}>
+		<Link href={`/category/retsipe/${idMeal}`}>
+			<Card maxW='sm' mx={'auto'} mt={6}>
 				<CardBody p={0}>
 					<Image
 						w={'100%'}
 						h={'250'}
 						objectFit={'cover'}
-						src={strCategoryThumb}
+						src={strMealThumb}
 						alt='Green double couch with wooden legs'
 						borderRadius='lg'
 					/>
 					<Stack p={4} mt='6' spacing='3'>
-						<Heading size='md'>{strCategory}</Heading>
-						<Text>{strCategoryDescription.slice(0, 40)}...</Text>
+						<Heading size='md'>{strMeal.slice(0, 20)}</Heading>
 					</Stack>
 				</CardBody>
 				<Divider />
