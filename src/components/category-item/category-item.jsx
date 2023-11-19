@@ -31,7 +31,7 @@ export default function CategoryItem({ strCategory, strCategoryDescription, strC
 					/>
 					<Stack p={4} mt='6' spacing='3'>
 						<Heading size='md'>{strCategory}</Heading>
-						<Text>{strCategoryDescription.slice(0, 40)}...</Text>
+						<Text>{strCategoryDescription?.slice(0, 30)}...</Text>
 					</Stack>
 				</CardBody>
 				<Divider />
