@@ -45,7 +45,7 @@ export default function Hero() {
 					<Box position={'absolute'} top={'150px'} left={20}>
 						<Heading>{el.strMeal}</Heading>
 						<Text w={'50%'} py={5}>
-							{el.strInstructions.slice(0, 230)}...
+							{el.strInstructions.slice(0, 220)}...
 						</Text>
 						<Button onClick={onOpen} mt={4} variant={'solid'}>
 							Watch Details
