@@ -23,7 +23,7 @@ export default function Header() {
 	return (
 		<>
 			<Box w={'full'}>
-				<Flex w={'full'} h={20} alignItems={'center'} bg={'gray.700'} px={'25px'}>
+				<Flex w={'full'} h={20} alignItems={'center'} justifyContent={'space-between'} bg={'gray.700'} px={'25px'}>
 					<Link href={'/'}>
 						<Image
 							w={'100px'}
@@ -31,23 +31,35 @@ export default function Header() {
 							alt='home page'
 						/>
 					</Link>
-					<HStack gap={8} display={{ base: 'none', lg: 'flex' }}>
-						<Link href={'/'}>Home</Link>
-						<Link href={'/abaout'}>Category</Link>
-						<Link href={'/blog'}>AllCategory</Link>
+					<HStack>
+						<HStack gap={8} display={{ base: 'none', lg: 'flex' }} justifyContent={'space-between'}>
+							<Link href={'/'}>Home</Link>
+							<Link href={'/abaout'}>Category</Link>
+							<Link href={'/blog'}>AllCategory</Link>
+							<HStack w={'full'} display={'flex'}>
+								<IconButton
+									aria-label='color-mode'
+									onClick={toggleColorMode}
+									icon={colorMode === 'light' ? <BsMoonStarsFill /> : <BsFillSunFill />}
+									bg={'gray.700'}
+									variant={'solid'}
+									color={'white'}
+								/>
+							</HStack>
+						</HStack>
 					</HStack>
 					<Box w={'full'} display={{ base: 'flex', lg: 'none' }} justifyContent={'end'} gap={4}>
-						<HStack w={'full'} display={'flex'} justifyContent={'end'}>
-							<IconButton
-								aria-label='color-mode'
-								onClick={toggleColorMode}
-								icon={colorMode === 'light' ? <BsMoonStarsFill /> : <BsFillSunFill />}
-								bg={'gray.700'}
-								variant={'solid'}
-								color={'white'}
-							/>
-						</HStack>
 						<Menu>
+							<HStack w={'full'} display={'flex'} justifyContent={'end'}>
+								<IconButton
+									aria-label='color-mode'
+									onClick={toggleColorMode}
+									icon={colorMode === 'light' ? <BsMoonStarsFill /> : <BsFillSunFill />}
+									bg={'gray.700'}
+									variant={'solid'}
+									color={'white'}
+								/>
+							</HStack>
 							<MenuButton>
 								<PiListFill size='37' />
 							</MenuButton>
