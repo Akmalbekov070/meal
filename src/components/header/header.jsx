@@ -64,9 +64,16 @@ export default function Header() {
 								<PiListFill size='37' />
 							</MenuButton>
 							<MenuList>
-								<MenuItem>Home</MenuItem>
-								<MenuItem>Category</MenuItem>
-								<MenuItem>AllCategory</MenuItem>
+								<MenuItem>
+									<Link href={'/'}>Home</Link>
+								</MenuItem>
+								<MenuItem>
+									<Link href={'/abaout'}>Category</Link>
+								</MenuItem>
+								<MenuItem>
+									{' '}
+									<Link href={'/blog'}>AllCategory</Link>
+								</MenuItem>
 							</MenuList>
 						</Menu>
 					</Box>
