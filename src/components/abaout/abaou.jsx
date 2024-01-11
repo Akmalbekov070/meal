@@ -6,7 +6,7 @@ import { Box } from '@chakra-ui/react';
 export default function Abaou() {
 	return (
 		<Box p={10}>
-			<CategoryList />;
+			<CategoryList />
 		</Box>
 	);
 }

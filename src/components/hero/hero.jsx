@@ -27,7 +27,7 @@ import {
 import React, { useEffect, useState } from 'react';
 import CategoryList from '../category-list/category-list';
 
-export default function Hero() {
+export default function HomePage() {
 	const [meal, setMeal] = useState([]);
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	useEffect(() => {
@@ -39,13 +39,26 @@ export default function Hero() {
 	return (
 		<Box w={'full'}>
 			{meal.map(el => (
-				<Box key={el.idMeal} w={'full'} h={'600px'} position={'relative'}>
-					<Image w={'full'} h={'full'} objectFit={'cover'} src={el.strMealThumb} alt='home image' />
-					<Box position={'absolute'} top={0} left={0} bg={'blackAlpha.600'} w={'full'} h={'600px'}></Box>
-					<Box position={'absolute'} top={'150px'} left={20}>
+				<Box key={el.idMeal} w={'full'} h={{ base: '88%', lg: '90%', xl: '600px' }} position={'relative'}>
+					<Image
+						w={'full'}
+						h={{ base: '88%', lg: '90%', xl: '100%' }}
+						objectFit={'cover'}
+						src={el.strMealThumb}
+						alt='home image'
+					/>
+					<Box
+						position={'absolute'}
+						top={0}
+						left={0}
+						bg={'blackAlpha.600'}
+						w={'full'}
+						h={{ base: '100%', lg: '90%', xl: '600px' }}
+					></Box>
+					<Box position={'absolute'} top={{ base: '30px', sm: '200px', lg: '130px', xl: '150px' }} left={20}>
 						<Heading>{el.strMeal}</Heading>
-						<Text w={'50%'} py={5}>
-							{el.strInstructions.slice(0, 220)}...
+						<Text w={{ base: '80%', lg: '66%', xl: '50%' }} py={5}>
+							{el.strInstructions.slice(0, 150)}...
 						</Text>
 						<Button onClick={onOpen} mt={4} variant={'solid'}>
 							Watch Details
@@ -246,10 +259,12 @@ export default function Hero() {
 					</Modal>
 				</Box>
 			))}
-			<Box py={4} px={20}>
-				<Heading py={4}>Meal Categories</Heading>
-				<CategoryList />
+			<Box py={1} px={{ base: 4, lg: 10, xl: '20' }}>
+				<Heading py={4} fontSize={{ base: 'xl', lg: '3xl', xl: '' }}>
+					Meal Categories
+				</Heading>
 			</Box>
+			<CategoryList />
 		</Box>
 	);
 }

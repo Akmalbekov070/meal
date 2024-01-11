@@ -1,6 +1,7 @@
 import { Hero } from '@/components';
 import React from 'react';
 import Seo from './seo';
+import HomePage from '@/components/hero/hero';
 
 export default function HeroPage() {
 	return (
@@ -13,7 +14,7 @@ export default function HeroPage() {
 				'https://static.vecteezy.com/system/resources/thumbnails/023/870/103/small/gyoza-japanese-traditional-food-asian-dumpling-poster-illustration-png.png'
 			}
 		>
-			<Hero />
+			<HomePage />
 		</Seo>
 	);
 }

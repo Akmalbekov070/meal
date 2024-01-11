@@ -23,7 +23,14 @@ export default function Header() {
 	return (
 		<>
 			<Box w={'full'}>
-				<Flex w={'full'} h={20} alignItems={'center'} justifyContent={'space-between'} bg={'gray.700'} px={'25px'}>
+				<Flex
+					w={'full'}
+					h={20}
+					bg={colorMode === 'light' ? 'white' : 'gray.700'}
+					alignItems={'center'}
+					justifyContent={'space-between'}
+					px={'25px'}
+				>
 					<Link href={'/'}>
 						<Image
 							w={'100px'}
@@ -34,8 +41,8 @@ export default function Header() {
 					<HStack>
 						<HStack gap={8} display={{ base: 'none', lg: 'flex' }} justifyContent={'space-between'}>
 							<Link href={'/'}>Home</Link>
-							<Link href={'/abaout'}>Category</Link>
-							<Link href={'/blog'}>AllCategory</Link>
+							<Link href={'/abaout'}>About</Link>
+							<Link href={'/blog'}>Category</Link>
 							<HStack w={'full'} display={'flex'}>
 								<IconButton
 									aria-label='color-mode'
@@ -68,11 +75,11 @@ export default function Header() {
 									<Link href={'/'}>Home</Link>
 								</MenuItem>
 								<MenuItem>
-									<Link href={'/abaout'}>Category</Link>
+									<Link href={'/blog'}>About</Link>
 								</MenuItem>
 								<MenuItem>
 									{' '}
-									<Link href={'/blog'}>AllCategory</Link>
+									<Link href={'/abaout'}>Category</Link>
 								</MenuItem>
 							</MenuList>
 						</Menu>

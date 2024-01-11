@@ -1,9 +1,9 @@
-import { Hero } from '@/components';
+import HomePage from '@/components/hero/hero';
 
 export default function Home() {
 	return (
 		<>
-			<Hero />
+			<HomePage />
 		</>
 	);
 }
