@@ -17,7 +17,7 @@ export default function FooterPage() {
 				display={'flex'}
 				flexDirection={'column'}
 				alignItems={'center'}
-				pt={10}
+				pt={{ Base: 2, lg: 10 }}
 			>
 				<HStack>
 					<Link href={'/'}>
@@ -32,19 +32,39 @@ export default function FooterPage() {
 					</Text>
 				</HStack>
 				<Box pt={8}>
-					<HStack gap={16} fontSize={'lg'} textDecoration={'none'}>
+					<HStack
+						gap={{ base: 2, lg: 12, xl: 16 }}
+						display={{ base: 'none', xl: 'flex' }}
+						fontSize={'lg'}
+						textDecoration={'none'}
+					>
 						<Link href={'/'}>Home</Link>
 						<Link href={'/abaout'}>Category</Link>
 						<Link href={'/blog'}>AllCategory</Link>
 					</HStack>
 				</Box>
 				<Box w={'full'} h={'1.5px'} bg={'gray.600'} mt={8}></Box>
-				<Box w={'full'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} py={4} px={8}>
+				<Box
+					w={'full'}
+					display={'flex'}
+					flexDirection={{ base: 'column' }}
+					alignItems={'center'}
+					justifyContent={'space-between'}
+					py={4}
+					px={{ base: 8, xl: 8 }}
+				>
 					<Box w={'full'} display={'flex'} alignItems={'center'} gap={1}>
 						<TbCircleLetterC />
-						<Text>2023 Mealdb released. All rights reserved</Text>
+						<Text w={'full'}>2023 Mealdb released. All rights reserved</Text>
 					</Box>
-					<Box display={'flex'} alignItems={'center'} gap={8}>
+					<Box
+						w={{ base: '100%' }}
+						display={'flex'}
+						alignItems={'center'}
+						justifyContent={{ base: 'center', xl: 'end' }}
+						gap={{ base: 5, xl: 8 }}
+						py={{ base: 5, xl: '0px' }}
+					>
 						<Link href={'https://t.me/akmalbekov'}>
 							<FaTelegram size={'26'} />
 						</Link>
