@@ -59,11 +59,22 @@ export default function HomePage() {
 						display={colorMode === 'light' ? 'none' : 'flex'}
 					></Box>
 					<Box position={'absolute'} top={{ base: '30px', sm: '200px', lg: '130px', xl: '150px' }} left={20}>
-						<Heading color={colorMode === 'light' ? 'black' : 'white'}>{el.strMeal}</Heading>
-						<Text w={{ base: '80%', lg: '66%', xl: '50%' }} color={colorMode === 'light' ? 'black' : 'white'} py={5}>
+						<Heading color={colorMode === 'light' ? 'yellow' : 'white'}>{el.strMeal}</Heading>
+						<Text
+							w={{ base: '80%', lg: '66%', xl: '50%' }}
+							fontWeight={colorMode === 'light' ? '880' : '0'}
+							color={colorMode === 'light' ? 'yellow' : 'white'}
+							py={5}
+						>
 							{el.strInstructions.slice(0, 150)}...
 						</Text>
-						<Button onClick={onOpen} mt={4} variant={'solid'}>
+						<Button
+							bg={'transparent'}
+							color={colorMode === 'light' ? 'yellow.800' : 'white'}
+							onClick={onOpen}
+							mt={4}
+							variant={'solid'}
+						>
 							Watch Details
 						</Button>
 					</Box>
