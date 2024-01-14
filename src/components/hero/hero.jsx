@@ -22,6 +22,7 @@ import {
 	Th,
 	Thead,
 	Tr,
+	useColorMode,
 	useDisclosure,
 } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
@@ -30,6 +31,7 @@ import CategoryList from '../category-list/category-list';
 export default function HomePage() {
 	const [meal, setMeal] = useState([]);
 	const { isOpen, onOpen, onClose } = useDisclosure();
+	const { colorMode, toggleColorMode } = useColorMode();
 	useEffect(() => {
 		fetch('https://www.themealdb.com/api/json/v1/1/random.php?key=1')
 			.then(res => res.json())
@@ -54,10 +56,11 @@ export default function HomePage() {
 						bg={'blackAlpha.600'}
 						w={'full'}
 						h={{ base: '100%', lg: '90%', xl: '600px' }}
+						display={colorMode === 'light' ? 'none' : 'flex'}
 					></Box>
 					<Box position={'absolute'} top={{ base: '30px', sm: '200px', lg: '130px', xl: '150px' }} left={20}>
-						<Heading>{el.strMeal}</Heading>
-						<Text w={{ base: '80%', lg: '66%', xl: '50%' }} py={5}>
+						<Heading color={colorMode === 'light' ? 'black' : 'white'}>{el.strMeal}</Heading>
+						<Text w={{ base: '80%', lg: '66%', xl: '50%' }} color={colorMode === 'light' ? 'black' : 'white'} py={5}>
 							{el.strInstructions.slice(0, 150)}...
 						</Text>
 						<Button onClick={onOpen} mt={4} variant={'solid'}>
