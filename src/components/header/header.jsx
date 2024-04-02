@@ -41,8 +41,8 @@ export default function Header() {
 					<HStack>
 						<HStack gap={8} display={{ base: 'none', lg: 'flex' }} justifyContent={'space-between'}>
 							<Link href={'/'}>Home</Link>
-							<Link href={'/abaout'}>About</Link>
-							<Link href={'/blog'}>Category</Link>
+							<Link href={'/blog'}>About</Link>
+							<Link href={'/abaout'}>Category</Link>
 							<HStack w={'full'} display={'flex'}>
 								<IconButton
 									aria-label='color-mode'
