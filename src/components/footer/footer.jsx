@@ -19,7 +19,7 @@ export default function FooterPage() {
 				alignItems={'center'}
 				pt={{ Base: 2, lg: 10 }}
 			>
-				<HStack>
+				<HStack pt={4}>
 					<Link href={'/'}>
 						<Image
 							w={'60px'}
