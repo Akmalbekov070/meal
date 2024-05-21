@@ -36,7 +36,7 @@ export default function Listcategory({ idMeal, strMeal, strMealThumb }) {
 				</CardBody>
 				<Divider />
 				<CardFooter>
-					<HStack>
+					<HStack w={'full '} display={'flex'} justifyContent={'space-between'}>
 						<ButtonGroup spacing='2'>
 							<Button variant='solid' colorScheme='blue'>
 								Watch Category
@@ -46,7 +46,7 @@ export default function Listcategory({ idMeal, strMeal, strMealThumb }) {
 							</Button>
 						</ButtonGroup>
 						<Link href={'/'}>
-							<Box pl={{ base: 7, xl: 5 }}>
+							<Box>
 								<Button w={'100px'} variant={'solid'} colorScheme='red'>
 									Buy
 								</Button>
