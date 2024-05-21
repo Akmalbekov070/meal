@@ -7,6 +7,7 @@ import {
 	CardFooter,
 	Divider,
 	Flex,
+	HStack,
 	Heading,
 	Image,
 	Stack,
@@ -36,14 +37,16 @@ export default function CategoryItem({ strCategory, strCategoryDescription, strC
 				</CardBody>
 				<Divider />
 				<CardFooter>
-					<ButtonGroup spacing='2'>
-						<Button variant='solid' colorScheme='blue'>
-							Watch Category
-							<Flex p={2} pb={'2px'}>
-								<BsFillEyeFill />
-							</Flex>
-						</Button>
-					</ButtonGroup>
+					<HStack>
+						<ButtonGroup spacing='2'>
+							<Button variant='solid' colorScheme='blue'>
+								Watch Category
+								<Flex p={2} pb={'2px'}>
+									<BsFillEyeFill />
+								</Flex>
+							</Button>
+						</ButtonGroup>
+					</HStack>
 				</CardFooter>
 			</Card>
 		</Link>

@@ -8,6 +8,7 @@ import {
 	CardFooter,
 	Divider,
 	Flex,
+	HStack,
 	Heading,
 	Image,
 	Stack,
@@ -35,14 +36,23 @@ export default function Listcategory({ idMeal, strMeal, strMealThumb }) {
 				</CardBody>
 				<Divider />
 				<CardFooter>
-					<ButtonGroup spacing='2'>
-						<Button variant='solid' colorScheme='blue'>
-							Watch Category
-							<Flex p={2} pb={'2px'}>
-								<BsFillEyeFill />
-							</Flex>
-						</Button>
-					</ButtonGroup>
+					<HStack>
+						<ButtonGroup spacing='2'>
+							<Button variant='solid' colorScheme='blue'>
+								Watch Category
+								<Flex p={2} pb={'2px'}>
+									<BsFillEyeFill />
+								</Flex>
+							</Button>
+						</ButtonGroup>
+						<Link href={'/'}>
+							<Box pl={5}>
+								<Button w={'100px'} variant={'solid'} colorScheme='red'>
+									Buy
+								</Button>
+							</Box>
+						</Link>
+					</HStack>
 				</CardFooter>
 			</Card>
 		</Link>
