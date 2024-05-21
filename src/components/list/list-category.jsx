@@ -46,7 +46,7 @@ export default function Listcategory({ idMeal, strMeal, strMealThumb }) {
 							</Button>
 						</ButtonGroup>
 						<Link href={'/'}>
-							<Box pl={5}>
+							<Box pl={{ base: 7, xl: 5 }}>
 								<Button w={'100px'} variant={'solid'} colorScheme='red'>
 									Buy
 								</Button>
