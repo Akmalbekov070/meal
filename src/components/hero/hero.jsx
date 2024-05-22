@@ -58,7 +58,7 @@ export default function HomePage() {
 						h={{ base: '100%', lg: '90%', xl: '600px' }}
 						display={colorMode === 'light' ? 'none' : 'flex'}
 					></Box>
-					<Box position={'absolute'} top={{ base: '30px', sm: '200px', lg: '130px', xl: '150px' }} left={20}>
+					<Box position={'absolute'} top={{ base: '30px', sm: '200px', lg: '130px', xl: '150px' }} left={{ base: 18, xl: 20 }}>
 						<Heading color={colorMode === 'light' ? 'black' : 'white'}>{el.strMeal}</Heading>
 						<Text
 							w={{ base: '80%', lg: '66%', xl: '50%' }}
