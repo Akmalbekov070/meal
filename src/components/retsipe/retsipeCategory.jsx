@@ -17,6 +17,10 @@ import React from 'react';
 
 export default function RetsipeCategory({ data }) {
 	console.log(data);
+	module.exports = {
+		data,
+		strMeal,
+	};
 	return (
 		<Box w={'full'} py={2} px={2}>
 			<Box>

@@ -9,7 +9,6 @@ export default function List({ name }) {
 			.then(res => res.json())
 			.then(data => setMeal(data.meals));
 	}, []);
-	console.log(meal);
 	return (
 		<Box px={4}>
 			<Grid
