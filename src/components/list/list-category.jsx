@@ -45,7 +45,7 @@ export default function Listcategory({ idMeal, strMeal, strMealThumb }) {
 								</Flex>
 							</Button>
 						</ButtonGroup>
-						<Link href={'/BuyBlog'}>
+						<Link href={'/BlogId'}>
 							<Box>
 								<Button w={'100px'} variant={'solid'} colorScheme='red'>
 									Buy

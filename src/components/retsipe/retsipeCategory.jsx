@@ -1,7 +1,9 @@
 import {
 	Box,
+	Button,
 	Heading,
 	Image,
+	Link,
 	Table,
 	TableCaption,
 	TableContainer,
@@ -14,15 +16,11 @@ import {
 	Tr,
 } from '@chakra-ui/react';
 import React from 'react';
+import BlogId from '../BlogId/BlogId';
 
 export default function RetsipeCategory({ data }) {
-	console.log(data);
-	module.exports = {
-		data,
-		strMeal,
-	};
 	return (
-		<Box w={'full'} py={2} px={2}>
+		<Box w={'full'} py={2} px={2} key={data.idMeal}>
 			<Box>
 				<Heading>{data.strMeal}</Heading>
 			</Box>
@@ -201,6 +199,16 @@ export default function RetsipeCategory({ data }) {
 					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 					allowfullscreen
 				></iframe>
+			</Box>
+			{/* BlogId page */}
+			<Box py={10}>
+				<Link href='/BlogId'>
+					<Box w={'full'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
+						<Button w={'500px'} variant={'solid'} colorScheme='red'>
+							Buy
+						</Button>
+					</Box>
+				</Link>
 			</Box>
 		</Box>
 	);
