@@ -201,7 +201,7 @@ export default function RetsipeCategory({ data }) {
 				></iframe>
 			</Box>
 			{/* BlogId page */}
-			<Box py={10}>
+			<Box py={10} px={8}>
 				<Link href='/BlogId'>
 					<Box w={'full'} display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
 						<Button w={'500px'} variant={'solid'} colorScheme='red'>
