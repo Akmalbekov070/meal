@@ -3,6 +3,7 @@ import './globals.css';
 import Footer from '@/components/footer/footer';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import FooterPage from '@/components/footer/footer';
+import { Toaster } from 'sonner';
 
 export const metadata = {
 	title: 'HomePage',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
 			<body>
 				<ChakraProvider>
 					<Header />
+					<Toaster position='bottom' />
 					{children}
 					<FooterPage />
 				</ChakraProvider>

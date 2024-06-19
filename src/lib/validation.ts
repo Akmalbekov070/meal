@@ -3,7 +3,7 @@
 import { z } from 'zod';
 
 export const formSchema = z.object({
-	name: z.string(),
-	number: z.number(),
+	username: z.string(),
+	phone: z.string(),
 	message: z.string().min(10).max(100),
 });
