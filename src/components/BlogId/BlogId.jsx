@@ -1,8 +1,7 @@
-// Add "use client" at the top of the file
 'use client';
 
 import { formSchema } from '@/lib/validation';
-import { Box } from '@chakra-ui/react';
+import { Box, useToast } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -10,21 +9,52 @@ import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 
 const BlogId = () => {
+	const toast = useToast();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		reset,
 	} = useForm({
 		resolver: zodResolver(formSchema),
+		defaultValues: {
+			username: '',
+			phone: '',
+			message: '',
+		},
 	});
 	const [load, setLoad] = useState(false);
 
 	const onSubmit = data => {
 		setLoad(true);
-		// Handle form submission
-		console.log(data);
-		// Reset load state
-		setLoad(false);
+		const telegramBotId = process.env.NEXT_PUBLIC_TELEGRAM_API;
+		const telegramBotKey = process.env.NEXT_PUBLIC_TELEGRAM_KEY_API;
+
+		const promise = fetch(`https://api.telegram.org/bot${telegramBotId}/sendMessage`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Cache-Control': 'no-cache',
+			},
+			body: JSON.stringify({
+				chat_id: telegramBotKey,
+				text: `Name: ${data.username},\nPhone: ${data.phone},\nMessage: ${data.message}`,
+			}),
+		})
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				return response.json();
+			})
+			.then(() => reset())
+			.finally(() => setLoad(false));
+
+		toast.promise(promise, {
+			loading: 'Loading...',
+			success: 'Successfully sent',
+			error: 'Error occurred',
+		});
 	};
 
 	return (
@@ -55,7 +85,6 @@ const BlogId = () => {
 							/>
 							{errors.phone && <p className='text-xl text-red-700 py-2'>{errors.phone.message}</p>}
 							<Textarea
-								type='text'
 								className='bg-slate-950 shadow mb-4 appearance-none border rounded-lg w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline'
 								disabled={load}
 								placeholder='Why are you contacting me'
