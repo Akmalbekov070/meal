@@ -38,7 +38,7 @@ const BlogId = () => {
 			},
 			body: JSON.stringify({
 				chat_id: telegramBotKey,
-				text: `Name: ${data.username},\nPhone: ${data.phone},\nMessage: ${data.message}`,
+				text: `MealName: ${data.username},\nPhoneNumber: ${data.phone},\nMessage: ${data.message}`,
 			}),
 		})
 			.then(response => {
@@ -72,7 +72,7 @@ const BlogId = () => {
 								type='text'
 								className='bg-slate-950 shadow mb-4 appearance-none border rounded-lg w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline'
 								disabled={load}
-								placeholder='Write your name'
+								placeholder='send meal name'
 								{...register('username')}
 							/>
 							{errors.username && <p className='text-xl text-red-700 py-2'>{errors.username.message}</p>}
@@ -87,7 +87,7 @@ const BlogId = () => {
 							<Textarea
 								className='bg-slate-950 shadow mb-4 appearance-none border rounded-lg w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline'
 								disabled={load}
-								placeholder='Why are you contacting me'
+								placeholder='whether to make a change to the selected food'
 								{...register('message')}
 							/>
 							{errors.message && <p className='text-xl text-red-700 py-2'>{errors.message.message}</p>}
