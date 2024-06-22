@@ -1,7 +1,7 @@
 'use client';
 
 import { formSchema } from '@/lib/validation';
-import { Box, useToast } from '@chakra-ui/react';
+import { Box, useColorMode, useToast } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -56,10 +56,11 @@ const BlogId = () => {
 			error: 'Error occurred',
 		});
 	};
+	const { colorMode, toggleColorMode } = useColorMode();
 
 	return (
-		<Box pt={0}>
-			<div className='min-h-screen bg-gray-800 py-12 flex flex-col justify-center sm:py-16 px-3'>
+		<Box w={'full'} h={'100vh'} bg={colorMode === 'light' ? 'white' : 'gray.800'} pt={0}>
+			<div className=' py-12 flex flex-col justify-center sm:py-16 px-3'>
 				<div className='relative py-3 sm:max-w-xl sm:mx-auto'>
 					<div className='absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-12 sm:rounded-3xl'></div>
 					<div className='text-white relative px-4 py-10 bg-indigo-400 shadow-lg sm:rounded-3xl sm:p-20'>
@@ -72,7 +73,7 @@ const BlogId = () => {
 								type='text'
 								className='bg-slate-950 shadow mb-4 appearance-none border rounded-lg w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline'
 								disabled={load}
-								placeholder='send meal name'
+								placeholder='Send meal name'
 								{...register('username')}
 							/>
 							{errors.username && <p className='text-xl text-red-700 py-2'>{errors.username.message}</p>}
@@ -87,7 +88,7 @@ const BlogId = () => {
 							<Textarea
 								className='bg-slate-950 shadow mb-4 appearance-none border rounded-lg w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline'
 								disabled={load}
-								placeholder='whether to make a change to the selected food'
+								placeholder='Whether to make a change to the selected food'
 								{...register('message')}
 							/>
 							{errors.message && <p className='text-xl text-red-700 py-2'>{errors.message.message}</p>}
