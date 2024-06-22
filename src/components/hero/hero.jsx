@@ -73,7 +73,7 @@ export default function HomePage() {
 							color={colorMode === 'light' ? 'black' : 'white'}
 							onClick={onOpen}
 							mt={4}
-							variant={'solid'}
+							variant={'outline'}
 						>
 							Watch Details
 						</Button>
