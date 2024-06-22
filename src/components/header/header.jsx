@@ -85,6 +85,7 @@ export default function Header() {
 						</Menu>
 					</Box>
 				</Flex>
+				<Box w={'full'} h={'2px'} bg={'gray.600'}></Box>
 			</Box>
 		</>
 	);
